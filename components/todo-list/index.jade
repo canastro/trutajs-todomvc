@@ -1,0 +1,51 @@
+template#template
+    style
+        include style.css
+
+    .todoapp
+
+        input.toggle-all(
+            type='checkbox'
+            name='toggle-all'
+            ng-model='allChecked'
+            ng-click='markAll(allChecked)'
+        )
+
+        label(for='toggle-all') Mark all as complete
+
+        ul.todo-list(es-repeat="todo in todos")
+            li
+                .view
+                    input.toggle(
+                        type='checkbox',
+                        es-item
+                        es-model='todo.completed',
+                        es-change='toggleCompleted(todo)'
+                    )
+
+                    label(
+                        es-item
+                        es-click='editTodo(todo)'
+                        es-bindable
+                    ) ${todo.title}
+
+                    button.destroy(
+                        es-item
+                        es-click='removeTodo(todo)'
+                    )
+
+                form(
+                    ng-submit="saveEdits(todo, 'submit')"
+                    es-item
+                    es-show='todo.edit'
+                )
+                    input.edit(
+                        ng-trim='false',
+                        ng-model='todo.title',
+                        todo-escape='revertEdits(todo)',
+                        ng-blur="saveEdits(todo, 'blur')",
+                        todo-focus='todo == editedTodo'
+                    )
+
+script
+    include script.js

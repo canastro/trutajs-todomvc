@@ -1,0 +1,16 @@
+template#template
+    style
+        include style.css
+
+    .todoapp
+        h1 todos
+        input.new-todo(
+            placeholder='What needs to be done?'
+            es-item
+            es-model="newTodo"
+            es-keydown="keyDown($evt)"
+        )
+
+
+script
+    include script.js

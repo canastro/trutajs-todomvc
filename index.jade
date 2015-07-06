@@ -1,0 +1,43 @@
+doctype html
+html.no-js
+    head
+        meta(charset="utf-8")
+        title
+            | teste
+        meta(name='description', content='')
+        meta(name='viewport', content='width=device-width')
+
+        link(rel="stylesheet" href="assets/styles/styles.css")
+        link(rel="stylesheet" href="vendors/todomvc-common/base.css")
+        link(rel="stylesheet" href="vendors/todomvc-app-css/index.css")
+
+    body
+        section.todoapp
+
+            header.header(es-view="header")
+
+            section.main(es-view="content")
+
+            footer.footer(es-view="footer")
+
+            footer.info
+                p Double-click to edit a todo
+
+                p Credits:
+                    a(href='http://twitter.com/cburgdorf') Christoph Burgdorf
+                    | ,
+
+                    a(href='http://ericbidelman.com') Eric Bidelman
+                    | ,
+
+                    a(href='http://jacobmumm.com') Jacob Mumm
+                    |  and
+
+                    a(href='http://igorminar.com') Igor Minar
+
+                p Part of
+                    a(href='http://todomvc.com') TodoMVC
+
+
+        script(src="vendors/todomvc-common/base.js")
+        script(async src='scripts/bundle.js')
