@@ -16,3 +16,19 @@ Truta.bootstrap([
 ]).then(function () {
     Router.start();
 });
+
+
+// debugger;
+//
+// let robalo = new Robalo();
+// robalo.set({
+//     teste: 'a',
+//     list: []
+// });
+// robalo.add('list', { hello: 'world'});
+//
+// robalo.list[0].set({
+//     'yeh': 'wololo'
+// });
+//
+// console.log(robalo);

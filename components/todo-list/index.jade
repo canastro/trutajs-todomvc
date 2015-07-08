@@ -14,7 +14,11 @@ template#template
         label(for='toggle-all') Mark all as complete
 
         ul.todo-list(es-repeat="todo in todos")
-            li
+
+            li(
+                es-item
+                es-class="{'completed': ${todo.completed} }"
+            )
                 .view
                     input.toggle(
                         type='checkbox',
