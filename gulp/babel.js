@@ -2,6 +2,7 @@ var gulp = require("gulp");
 var babelify = require('babelify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var livereload = require('gulp-livereload');
 
 gulp.task('babel:sample', function() {
     var extensions = ['.js','.json','.es6'];
@@ -22,5 +23,6 @@ gulp.task('babel:sample', function() {
     )
     .bundle()
     .pipe(source('bundle.js'))
-    .pipe(gulp.dest('./dist/scripts'));
+    .pipe(gulp.dest('./dist/scripts'))
+    .pipe(livereload());
 });

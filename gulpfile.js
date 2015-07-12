@@ -6,3 +6,5 @@ var gulp = require('gulp');
 require('require-dir')('./gulp');
 
 gulp.task('build', ['clean', 'copy', 'jade', 'sass', 'babel:sample']);
+
+gulp.task('default', ['watch', 'serve']);

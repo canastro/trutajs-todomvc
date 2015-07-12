@@ -1,4 +1,4 @@
 var gulp = require('gulp');
 var serve = require('gulp-serve');
 
-gulp.task('serve', ['build'], serve(['dist']));
+gulp.task('serve', serve(['dist']));
