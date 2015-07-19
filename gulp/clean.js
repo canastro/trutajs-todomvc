@@ -6,3 +6,9 @@ gulp.task('clean', function (cb) {
         'dist/**/*'
     ], cb);
 });
+
+gulp.task('clean:jade', function (cb) {
+    del([
+        'dist/**/*.jade'
+    ], cb);
+});

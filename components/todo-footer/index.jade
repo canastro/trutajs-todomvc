@@ -10,15 +10,35 @@ template#template
 
         ul.filters
             li
-                a(ng-class="{selected: status == ''} ", href='#/') All
+                a(
+
+                    href='#'
+                    es-item
+                    es-class="{'selected': selectedState === 'ALL'} "
+                    es-click="show('ALL')"
+                ) All
 
             li
-                a(ng-class="{selected: status == 'active'}", href='#/active') Active
+                a(
+                    href='#'
+                    es-item
+                    es-click="show('ACTIVE')"
+                    es-class="{'selected': selectedState === 'ACTIVE'} "
+                ) Active
 
             li
-                a(ng-class="{selected: status == 'completed'}", href='#/completed') Completed
+                a(
+                    href='#'
+                    es-item
+                    es-click="show('COMPLETED')"
+                    es-class="{'selected': selectedState === 'COMPLETED'}"
+                ) Completed
 
-        button.clear-completed(ng-click='clearCompletedTodos()', ng-show='completedCount') Clear completed
+        button.clear-completed(
+            es-item
+            es-click='clearCompleted()',
+            es-show='remainingCount'
+        ) Clear completed
 
 
 script

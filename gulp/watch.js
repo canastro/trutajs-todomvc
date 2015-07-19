@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var livereload = require('gulp-livereload');
 
 gulp.task('watch', function() {
-  gulp.watch('assets/**/*.scss', ['sass']);
+  gulp.watch('assets/**/*.scss', ['copy', 'sass']);
   gulp.watch('components/**/*.css', ['copy']);
 
   gulp.watch('node_modules/truta-js/lib/**/*.js', ['babel:sample']);

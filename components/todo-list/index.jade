@@ -7,21 +7,24 @@ template#template
         input.toggle-all(
             type='checkbox'
             name='toggle-all'
-            ng-model='allChecked'
-            ng-click='markAll(allChecked)'
+            es-item
+            es-click='completeAll()'
         )
 
         label(for='toggle-all') Mark all as complete
 
-        ul.todo-list(es-repeat="todo in todos")
+        ul.todo-list(
+            es-repeat="todo in todos"
+        )
 
             li(
                 es-item
-                es-class="{'completed': ${todo.completed} }"
+                es-class="{'completed': todo.completed }"
+                es-show="todo.isVisible"
             )
                 .view
                     input.toggle(
-                        type='checkbox',
+                        type="checkbox",
                         es-item
                         es-model='todo.completed',
                         es-change='toggleCompleted(todo)'

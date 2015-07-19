@@ -3,7 +3,7 @@ var jade = require('gulp-jade');
 var merge = require('merge-stream');
 var livereload = require('gulp-livereload');
 
-gulp.task('jade', ['clean'], function (done) {
+gulp.task('jade', ['clean:jade'], function (done) {
 
     var index = gulp.src('./index.jade')
         .pipe(jade({
